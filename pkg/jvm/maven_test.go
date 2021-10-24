@@ -39,3 +39,5 @@ const mvnDependencyListOutput = `[INFO] Scanning for projects...
 [INFO] Finished at: 2021-10-20T19:31:08+02:00
 [INFO] ------------------------------------------------------------------------`
 
+
+
