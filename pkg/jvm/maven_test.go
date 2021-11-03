@@ -5,10 +5,9 @@ import (
 	"testing"
 )
 
-func TestMavenCompileTimeDepsParsing(t *testing.T) {
-	got, _ := MavenCompileTimeDeps(mvnDependencyListOutput)
+func MavenDepsParsing(t *testing.T) {
+	got, _ := MavenCompileAndRuntimeTimeDeps(mvnDependencyListOutput)
 	want := map[string] string {
-		"junit:junit": "3.8.1",
 		"org.apache.logging.log4j:log4j-core": "2.14.1",
 		"org.apache.logging.log4j:log4j-api": "2.14.2",
 	}
@@ -16,6 +15,7 @@ func TestMavenCompileTimeDepsParsing(t *testing.T) {
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("got %q, wanted %q", got, want)
 	}
+	
 }
 
 const mvnDependencyListOutput = `[INFO] Scanning for projects...
