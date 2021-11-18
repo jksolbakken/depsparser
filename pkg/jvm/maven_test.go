@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func MavenDepsParsing(t *testing.T) {
+func TestMavenDeps(t *testing.T) {
 	got, _ := MavenCompileAndRuntimeTimeDeps(mvnDependencyListOutput)
 	want := map[string] string {
 		"org.apache.logging.log4j:log4j-core": "2.14.1",

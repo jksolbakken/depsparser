@@ -5,8 +5,8 @@ import (
 	"testing"
 )
 
-func TestGradleCompileTimeDepsParsing(t *testing.T) {
-	got, _ := GradleCompileTimeDeps(gradleDependenciesOutput)
+func TestGradleDeps(t *testing.T) {
+	got, _ := GradleDeps(gradleDependenciesOutput)
 	want := map[string] string {
 		"org.apache.logging.log4j:log4j-core": "2.14.1",
 		"org.apache.logging.log4j:log4j-api": "2.14.2",

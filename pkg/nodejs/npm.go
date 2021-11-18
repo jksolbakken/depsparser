@@ -5,9 +5,9 @@ import (
 	"fmt"
 )
 
-func NpmDeps(packageLockJsonContents []byte) (map[string]string, error) {
+func NpmDeps(packageLockJsonContents string) (map[string]string, error) {
 	var f interface{}
-	err := json.Unmarshal(packageLockJsonContents, &f)
+	err := json.Unmarshal([]byte(packageLockJsonContents), &f)
 	if err != nil {
 		return nil, fmt.Errorf("unable to parse package-lock.json: %v", err)
 	}
